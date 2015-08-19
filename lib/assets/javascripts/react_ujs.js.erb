@@ -41,7 +41,11 @@
         var propsJson = node.getAttribute(window.ReactRailsUJS.PROPS_ATTR);
         var props = propsJson && JSON.parse(propsJson);
 
-        React.render(React.createElement(constructor, props), node);
+        if(props.reference){
+          ReactRailsUJS[props.reference] = React.render(React.createElement(constructor, props), node);
+        }else{
+          React.render(React.createElement(constructor, props), node);
+        }
       }
     },
 

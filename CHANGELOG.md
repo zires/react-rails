@@ -4,6 +4,8 @@
 
 #### New Features 
 
+- Store the return value of `React.render` if props provides reference.
+
 #### Deprecation 
 
 #### Bug Fixes 
